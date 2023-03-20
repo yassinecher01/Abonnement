@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="dao" class="org.example.dao.AbonnementDao"></bean>
+    <bean id="metier" class="org.example.metier.AbonnementMetier">
+        <property name="abonnementDao" ref="dao"></property>
+    </bean>
+    <bean id="controler" class="org.example.presentation.AbonnementControler">
+        <property name="abonnementMetier" ref="metier"></property>
+    </bean>
+</beans>
